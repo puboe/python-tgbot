@@ -8,13 +8,13 @@ class MotionCmd(command.BotCommand):
         if len(contents) < 2 or len(contents) >= 3:
 			return msg.BotMsg('Usage: .motion [start | stop]')
 
-      output = self.process_output('motion ' + cmd)
+        output = self.process_output('motion ' + cmd)
 
-      resp = msg.BotMsg('Motion: ' + cmd)
+        resp = msg.BotMsg('Motion: ' + cmd)
 
-      return resp
+        return resp
 
     def process_output(self, command):
-      return subprocess.check_output(command.split()).decode().strip()
+        return subprocess.check_output(command.split()).decode().strip()
 
 command_instance = StatusCmd(bindings = ['motion'], name = 'motion')
