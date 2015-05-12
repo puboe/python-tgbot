@@ -1,11 +1,16 @@
 import subprocess
 from bot import command, msg
 
-class StatusCmd(command.BotCommand):
+class MotionCmd(command.BotCommand):
     def run(self, dest, contents):
-      output = self.process_output('motion start')
+        print "Motion contents:"
+        print contents
+        if len(contents) < 2 or len(contents) >= 3:
+			return msg.BotMsg('Usage: .motion [start | stop]')
 
-      resp = msg.BotMsg('Motion: ' + output)
+      output = self.process_output('motion ' + cmd)
+
+      resp = msg.BotMsg('Motion: ' + cmd)
 
       return resp
 
