@@ -8,9 +8,9 @@ class MotionCmd(command.BotCommand):
         if len(contents) < 2:
             return msg.BotMsg('Usage: .motion [start | stop]')
 
-
-        cmd = contents[1]
-        output = self.process_output('motion ' + cmd)
+        cmd = 'motion ' + contents[1]
+        print (cmd)
+        output = self.process_output(cmd)
         resp = msg.BotMsg('Motion: ' + cmd)
         return resp
 
