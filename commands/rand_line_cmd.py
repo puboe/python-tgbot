@@ -1,4 +1,5 @@
 import random
+import codecs
 
 from bot import command, msg
 
@@ -15,7 +16,7 @@ class RandLineCmd(command.BotCommand):
 		self._bindings_map = {}
 		for val in files_cfg.values():
 			filename, binding = [p.strip() for p in val.split(',')]
-			with open(filename) as f:
+			with codecs.open(filename, 'r', encoding='utf8') as f:
 				self._bindings_map[binding] = f.readlines()
 				self._attributes['bindings'].append(binding)
 
