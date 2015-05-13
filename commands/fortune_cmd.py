@@ -11,4 +11,4 @@ class MotionCmd(command.BotCommand):
     def process_output(self, command):
         return subprocess.check_output(command.split()).decode().strip()
 
-command_instance = MotionCmd(bindings = ['motion'], name = 'motion')
+command_instance = MotionCmd(bindings = ['f', "fortune"], name = 'fortune')
