@@ -131,7 +131,7 @@ def begin(cmd_dict, bot_cfg):
 
 	while True:
 		msg = read_line(tg_proc)
-		print(msg.encode('utf8'))
+		print(msg)
 		msg_parts = parse_msg(msg, cmd_prefix)
 
 		if msg_parts:
