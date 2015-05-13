@@ -2,7 +2,7 @@ import subprocess
 from bot import command, msg
 
 class StatusCmd(command.BotCommand):
-    def run(self, dest, contents):
+    def run(self, dest, contents, passphrase):
       commit = 'commit hash: ' + self.process_output('git rev-parse --short HEAD') + '...'
       uptime = self.process_output('uptime -p')
       free = self.process_output('free -m').split('\n')[1].split()

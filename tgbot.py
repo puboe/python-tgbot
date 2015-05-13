@@ -125,6 +125,7 @@ def open_telegram_socket(bot_cfg):
 def begin(cmd_dict, bot_cfg):
 	tg_proc = start_telegram_cli(bot_cfg)
 	cmd_prefix = bot_cfg['bot']['cmd-prefix']
+	passphrase = bot_cfg['bot']['passphrase']
 	tg_socket = open_telegram_socket(bot_cfg)
 	print('Setup complete, bot is now running.')
 
@@ -137,7 +138,7 @@ def begin(cmd_dict, bot_cfg):
 			dest, contents, cmd = msg_parts
 			if cmd in cmd_dict:
 				cmd_instance = cmd_dict[cmd]
-				reply = cmd_instance.run(dest, contents)
+				reply = cmd_instance.run(dest, contents, passphrase)
 				if reply:
 					reply.send_reply(dest, tg_socket)
 

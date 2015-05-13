@@ -12,7 +12,7 @@ class BotCommand:
 		for k, v in attributes.items():
 			self._attributes[k] = v
 
-	def run(self, dest, contents):
+	def run(self, dest, contents, passphrase):
 		raise NotImplementedError
 
 	def get_attribute(self, attr):

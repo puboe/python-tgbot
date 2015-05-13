@@ -1,7 +1,7 @@
 from bot import command, msg
 
 class HelloCmd(command.BotCommand):
-	def run(self, dest, contents):
+	def run(self, dest, contents, passphrase):
 		return msg.BotMsg('Hello there.')
 
 

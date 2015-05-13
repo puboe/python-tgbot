@@ -2,7 +2,7 @@ import os, shutil, urllib.request, urllib.parse, json
 from bot import command, msg, image
 
 class ImgCmd(command.BotCommand):
-	def run(self, dest, contents):
+	def run(self, dest, contents, passphrase):
 		if len(contents) < 2:
 			return msg.BotMsg('Usage: .image [search terms]')
 

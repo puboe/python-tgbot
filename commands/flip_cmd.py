@@ -2,7 +2,7 @@ from bot import command, msg
 import random
 
 class FlipCmd(command.BotCommand):
-	def run(self, dest, contents):
+	def run(self, dest, contents, passphrase):
 		if bool(random.getrandbits(1)):
 			answer = 'Tails'
 		else:

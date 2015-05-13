@@ -2,7 +2,7 @@ import wikipedia
 from bot import command, msg
 
 class WikiCmd(command.BotCommand):
-	def run(self, dest, contents):
+	def run(self, dest, contents, passphrase):
 		if len(contents) < 2:
 			return msg.BotMsg('Usage: .wiki [search terms]')
 

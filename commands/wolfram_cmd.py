@@ -5,7 +5,7 @@ import urllib.parse
 BASE_URL = 'http://api.wolframalpha.com/v2/query?format=plaintext'
 
 class WolframCmd(command.BotCommand):
-	def run(self, dest, contents):
+	def run(self, dest, contents, passphrase):
 		if len(contents) < 2:
 			return msg.BotMsg('Usage: .wolfram [search terms]')
 

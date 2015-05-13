@@ -3,7 +3,7 @@ from commands.wikiquote import wikiquote
 from bot import command, msg
 
 class QuoteCmd(command.BotCommand):
-	def run(self, dest, contents):
+	def run(self, dest, contents, passphrase):
 		if len(contents) < 2:
 			return msg.BotMsg('Usage: .quote [search terms]')
 

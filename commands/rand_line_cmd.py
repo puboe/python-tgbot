@@ -3,7 +3,7 @@ import random
 from bot import command, msg
 
 class RandLineCmd(command.BotCommand):
-	def run(self, dest, contents):
+	def run(self, dest, contents, passphrase):
 		lines = self._bindings_map[contents[0][1:]]
 		return msg.BotMsg(random.choice(lines).strip())
 
